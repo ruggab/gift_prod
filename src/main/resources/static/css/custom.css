@@ -1,0 +1,16 @@
+@font-face {
+    font-family: NovelSansPro_Bold;
+    src: url("../images/NovelSansPro_Bold.otf") format("opentype");
+}
+
+body {
+    font-family: NovelSansPro_Bold !important;
+    font-weight: 100;
+}
+
+@media screen and (min-width: 400px) and (max-width: 1000px) {
+
+    .footer {
+        display : none !important;
+    }
+}
