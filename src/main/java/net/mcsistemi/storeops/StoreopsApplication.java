@@ -10,5 +10,5 @@ public class StoreopsApplication extends SpringBootServletInitializer {
 	public static void main(String[] args) {
 		SpringApplication.run(StoreopsApplication.class, args);
 	}
- 
+   
 } 

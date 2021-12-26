@@ -1,18 +1,44 @@
 package net.mcsistemi.storeops.controllers;
 
-import net.mcsistemi.storeops.models.*;
-import net.mcsistemi.storeops.payload.request.CouponRequest;
-import net.mcsistemi.storeops.payload.request.GiftActivationRequest;
-import net.mcsistemi.storeops.payload.request.GiftRequest;
-import net.mcsistemi.storeops.security.services.GiftCardServiceImpl;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.PostConstruct;
-import java.util.*;
+import net.mcsistemi.storeops.models.AssignGiftRequest;
+import net.mcsistemi.storeops.models.CouponActivation;
+import net.mcsistemi.storeops.models.GenerateGiftRequest;
+import net.mcsistemi.storeops.models.GiftActivation;
+import net.mcsistemi.storeops.models.GiftAvailability;
+import net.mcsistemi.storeops.models.GiftCheckValue;
+import net.mcsistemi.storeops.models.GiftMovement;
+import net.mcsistemi.storeops.models.GiftStatusRequest;
+import net.mcsistemi.storeops.models.IExportGift;
+import net.mcsistemi.storeops.models.IGenerateGiftResponse;
+import net.mcsistemi.storeops.models.IGiftDaAttivare;
+import net.mcsistemi.storeops.models.IGiftDetails;
+import net.mcsistemi.storeops.models.IGiftDocument;
+import net.mcsistemi.storeops.models.IGiftDocumentDetails;
+import net.mcsistemi.storeops.models.IGiftMovementsDetails;
+import net.mcsistemi.storeops.models.IGiftToAssign;
+import net.mcsistemi.storeops.models.IGrafici;
+import net.mcsistemi.storeops.models.IHistogramGraph;
+import net.mcsistemi.storeops.models.INegozi;
+import net.mcsistemi.storeops.models.UpdateGiftRequest;
+import net.mcsistemi.storeops.payload.request.CouponRequest;
+import net.mcsistemi.storeops.payload.request.GiftActivationRequest;
+import net.mcsistemi.storeops.payload.request.GiftRequest;
+import net.mcsistemi.storeops.security.services.GiftCardServiceImpl;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
